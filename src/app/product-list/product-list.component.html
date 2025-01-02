@@ -1,0 +1,13 @@
+<div>
+  <img [src]="product.pImage" style="height: 100px">
+  <p>Name : {{ product.name }}</p>
+  <p>Price : {{ '$' + product.price }}</p>
+  <p>Color : {{ product.color }}</p>
+  <p>Discounted Price : ${{ getDiscounted().toFixed(2) }}</p>
+  <p>Stock : {{ product.inStock > 0 ? 'only ' + product.inStock + ' items left' : 'Not in stock' }}</p>
+  <input (input)="displayText($event)">
+  <p>{{displayValue}}</p>
+  <button (click)="decrementCartValue()">-</button>
+  <span>{{ addToCart }}</span>
+  <button (click)="incrementCartValue()">+</button>
+</div>
