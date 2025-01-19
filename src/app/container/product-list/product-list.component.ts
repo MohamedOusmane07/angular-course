@@ -533,4 +533,9 @@ export class ProductListComponent {
     }
   ];
 
+
+  totolProductCount:number=this.products.length;
+  totalProductInStockCount:number=this.products.filter(p=>p.is_in_inventory===true).length;
+  totalProductOutOfStockCount : number = this.products.filter(p=>p.is_in_inventory===false).length;
+
 }
