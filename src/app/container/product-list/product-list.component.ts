@@ -537,5 +537,30 @@ export class ProductListComponent {
   totolProductCount:number=this.products.length;
   totalProductInStockCount:number=this.products.filter(p=>p.is_in_inventory===true).length;
   totalProductOutOfStockCount : number = this.products.filter(p=>p.is_in_inventory===false).length;
+  //products=this.products;
+  selectedFilterRadioButton:string = 'all'
+  onFilterChanged(value :string) {
+    console.log(value)
+    this.selectedFilterRadioButton=value;
+
+
+
+  /*
+    if(this.selectedFilterRadioButton==='all'){
+      this.products;
+    }
+    else if (this.selectedFilterRadioButton==='true'){
+      this.products=this.allProducts.filter(p=>p.is_in_inventory===true)
+    }
+    else if(this.selectedFilterRadioButton==='false'){
+      this.products=this.aalProducts.filter(p=>p.is_in_inventory===false)
+    }
+
+   */
+
+  }
+
+
+
 
 }
