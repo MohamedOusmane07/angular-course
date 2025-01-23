@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'product-list',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-  products = [
+  allProducts = [
     {
       id: 1,
       name: "Nike React Infinity Run Flyknit",
@@ -17,7 +17,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10],
       color: ["White", "Blue", "Black"],
       price: 160,
-      discountPrice:140,
+      discountPrice: 140,
       is_in_inventory: true,
       items_left: 3,
       imageURL: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-665455a5-45de-40fb-945f-c1852b82400d/react-infinity-run-flyknit-mens-running-shoe-zX42Nc.jpg",
@@ -63,7 +63,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10],
       color: ["White", , "Brown", "Red"],
       price: 180,
-      discountPrice:140,
+      discountPrice: 140,
       is_in_inventory: false,
       items_left: 3,
       imageURL: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/99a7d3cb-e40c-4474-91c2-0f2e6d231fd2/joyride-run-flyknit-womens-running-shoe-HcfnJd.jpg",
@@ -109,7 +109,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10],
       color: ["White", "Brown", "Red", "Black"],
       price: 80,
-      discountPrice:60,
+      discountPrice: 60,
       is_in_inventory: true,
       items_left: 3,
       imageURL: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/whegph8z9ornhxklc8rp/phantom-venom-academy-fg-firm-ground-soccer-cleat-6JVNll.jpg",
@@ -125,7 +125,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10, 11, 12],
       color: ["White", "Blue", "Black"],
       price: 145,
-      discountPrice:125,
+      discountPrice: 125,
       is_in_inventory: false,
       items_left: 3,
       imageURL: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/vhbwnkor8sxt8qtecgia/mercurial-vapor-13-elite-tech-craft-fg-firm-ground-soccer-cleat-l38JPj.jpg",
@@ -156,7 +156,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10],
       color: ["White", "Blue", "Black"],
       price: 90,
-      discountPrice:70,
+      discountPrice: 70,
       is_in_inventory: true,
       items_left: 3,
       imageURL: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/178b2a46-3ee4-492b-882e-f71efdd53a36/air-force-1-big-kids-shoe-2zqp8D.jpg",
@@ -172,7 +172,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9],
       color: ["White", "Blue", "Black"],
       price: 100,
-      discountPrice:75,
+      discountPrice: 75,
       is_in_inventory: true,
       items_left: 3,
       imageURL: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8439f823-86cf-4086-81d2-4f9ff9a66866/air-max-90-big-kids-shoe-1wzwJM.jpg",
@@ -218,7 +218,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10, 11, 12],
       color: ["White", "Blue", "Black", "Brown", "Red"],
       price: 80,
-      discountPrice:65,
+      discountPrice: 65,
       is_in_inventory: true,
       items_left: 3,
       imageURL: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-73e54c0b-11a6-478b-9f90-bd97fcde872d/renew-run-big-kids-running-shoe-5Bpz93.jpg",
@@ -249,7 +249,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10],
       color: ["White", "Blue", "Black", "Brown", "Red"],
       price: 80,
-      discountPrice:45,
+      discountPrice: 45,
       is_in_inventory: true,
       items_left: 5,
       imageURL: "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/Beck-Black_800x800.jpg",
@@ -295,7 +295,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10],
       color: ["White", "Blue"],
       price: 75,
-      discountPrice:60,
+      discountPrice: 60,
       is_in_inventory: false,
       items_left: 2,
       imageURL: "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/Austin-Coffee_800x800.jpg?v=1574772988",
@@ -326,7 +326,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10, 11, 12],
       color: ["White", "Blue", "Black"],
       price: 50,
-      discountPrice:35,
+      discountPrice: 35,
       is_in_inventory: true,
       items_left: 4,
       imageURL: "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/009250000-779-SS-HL-0136-Coffee_800x800.jpg?v=1571900372",
@@ -417,7 +417,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9],
       color: ["White", "Blue", "Black", "Brown", "Red"],
       price: 65,
-      discountPrice:45,
+      discountPrice: 45,
       is_in_inventory: true,
       items_left: 5,
       imageURL: "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/a36518227134495da766ab9d01772fa2_9366/X_PLR_Shoes_Red_FY9063_01_standard.jpg",
@@ -448,7 +448,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10],
       color: ["White", "Blue", "Black", "Brown", "Red"],
       price: 120,
-      discountPrice:105,
+      discountPrice: 105,
       is_in_inventory: true,
       items_left: 3,
       imageURL: "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/99ca762cb9054caf82fbabc500fd146e_9366/NMD_R1_Shoes_Blue_FY9392_01_standard.jpg",
@@ -479,7 +479,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10, 11, 12],
       color: ["White", "Blue", "Black"],
       price: 90,
-      discountPrice:80,
+      discountPrice: 80,
       is_in_inventory: true,
       items_left: 3,
       imageURL: "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/12365dbc7c424288b7cdab4900dc7099_9366/Superstar_Shoes_White_FW3553_FW3553_01_standard.jpg",
@@ -510,7 +510,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9],
       color: ["White", "Blue", "Black", "Red"],
       price: 60,
-      discountPrice:25,
+      discountPrice: 25,
       is_in_inventory: true,
       items_left: 3,
       imageURL: "https://images.vans.com/is/image/Vans/UUK24I-HERO?$583x583$",
@@ -533,19 +533,24 @@ export class ProductListComponent {
     }
   ];
 
+  totolProductCount: number = this.allProducts.length;
+  totalProductInStockCount: number = this.allProducts.filter(p => p.is_in_inventory === true).length;
+  totalProductOutOfStockCount: number = this.allProducts.filter(p => p.is_in_inventory === false).length;
 
-  totolProductCount:number=this.products.length;
-  totalProductInStockCount:number=this.products.filter(p=>p.is_in_inventory===true).length;
-  totalProductOutOfStockCount : number = this.products.filter(p=>p.is_in_inventory===false).length;
-  //products=this.products;
-  selectedFilterRadioButton:string = 'all'
-  onFilterChanged(value :string) {
+  //search data from parent container component
+
+  @Input()
+  searchText: string = '';
+
+  selectedFilterRadioButton: string = 'all'
+  products=this.allProducts;
+
+
+  onFilterChanged(value: string) {
     console.log(value)
-    this.selectedFilterRadioButton=value;
+    this.selectedFilterRadioButton = value;
 
-
-
-  /*
+    this.products=this.allProducts;
     if(this.selectedFilterRadioButton==='all'){
       this.products;
     }
@@ -553,12 +558,14 @@ export class ProductListComponent {
       this.products=this.allProducts.filter(p=>p.is_in_inventory===true)
     }
     else if(this.selectedFilterRadioButton==='false'){
-      this.products=this.aalProducts.filter(p=>p.is_in_inventory===false)
+      this.products=this.allProducts.filter(p=>p.is_in_inventory===false)
     }
 
-   */
+
+
 
   }
+
 
 
 
