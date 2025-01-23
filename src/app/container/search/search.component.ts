@@ -18,15 +18,11 @@ export class SearchComponent {
   }
 
 
+  updateSearchText(inputEl:HTMLInputElement) {
+    this.searchText=inputEl.value;
+    this.searchTextChanged.emit(this.searchText);
 
-
-
-
-
-
-
-
-
+  }
 }
 
 
