@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, QueryList, viewChild, ViewChildren,} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-ekart';
+  fullName:string='';
+  @ViewChildren('inputEl')
+  inputElList:QueryList<ElementRef>;
+
+  show(){
+    let name = ''
+    this.inputElList.forEach((el)=>{
+      console.log(el.nativeElement.value)
+      name +=el.nativeElement.value + ' '
+    })
+    this.fullName=name.trim();
+  }
 }
