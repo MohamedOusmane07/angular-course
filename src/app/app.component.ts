@@ -7,14 +7,14 @@ import {Component, ElementRef, QueryList, viewChild, ViewChildren,} from '@angul
 })
 export class AppComponent {
   title = 'Angular Life Cycle';
-  inputVal:string[]=['hello' ,' Mr Ould'];
+  inputVal:string='';
 
   constructor() {
     console.log('App component constructor called')
   }
 
   onBtnClick(inputEL: HTMLInputElement) {
-    this.inputVal.push(inputEL.value);
+    this.inputVal=inputEL.value;
 
   }
 }
