@@ -1,1 +1,5 @@
-
+<div class="container">
+  <input type="text" #inputEL>
+  <button (click)="onBtnClick(inputEL)">Submit</button>
+  <app-demo [inputValueMessage]="inputVal"></app-demo>
+</div>

@@ -6,5 +6,15 @@ import {Component, ElementRef, QueryList, viewChild, ViewChildren,} from '@angul
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'angular-ekart';
+  title = 'Angular Life Cycle';
+  inputVal:string='';
+
+  constructor() {
+    console.log('App component constructor called')
+  }
+
+  onBtnClick(inputEL: HTMLInputElement) {
+    this.inputVal=inputEL.value;
+
+  }
 }
