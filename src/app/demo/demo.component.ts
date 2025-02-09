@@ -1,6 +1,7 @@
 import {
+  AfterContentInit,
   ChangeDetectionStrategy,
-  Component,
+  Component, ContentChild,
   DoCheck,
   ElementRef,
   Input,
@@ -16,11 +17,12 @@ import {
   styleUrl: './demo.component.css',
  // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DemoComponent implements OnChanges, DoCheck{
+export class DemoComponent implements OnChanges,OnInit, DoCheck,AfterContentInit{
 
   title : string ='Demo component'
   @Input() message : string;
   @ViewChild('temp') tempEl : ElementRef;
+  @ContentChild('temp')paraContent : ElementRef;
 
   constructor() {
     console.log('Demo component constructor called')
@@ -34,12 +36,20 @@ export class DemoComponent implements OnChanges, DoCheck{
 
   }
 
-  /*ngOnInit(){
+  ngOnInit(){
     console.log('ngOnit hook is called')
     //console.log(this.tempEl.nativeElement.innerHTML);
-  }*/
+  }
 
   ngDoCheck(){
     console.log('ngDoCheck is called')
+    console.log('In doCheck ', this.paraContent)
+  }
+
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit is called')
+    console.log('In ngAfterContentInit ', this.paraContent)
+
+
   }
 }
