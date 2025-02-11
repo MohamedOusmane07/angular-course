@@ -5,7 +5,7 @@ import {
   DoCheck,
   ElementRef,
   Input,
-  OnChanges,
+  OnChanges, OnDestroy,
   OnInit,
   SimpleChanges,
   ViewChild
@@ -16,7 +16,7 @@ import {
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.css',
 })
-export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked, AfterViewInit,AfterViewChecked{
+export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,AfterContentChecked, AfterViewInit,AfterViewChecked, OnDestroy{
 
   title : string ='Demo component'
   @Input() message : string;
@@ -29,30 +29,30 @@ export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,
   }
 
   ngOnChanges(changes:SimpleChanges){
-    //console.log('ngOnChanges hook is called')
+    console.log('ngOnChanges hook is called')
     //console.log(changes);
   }
 
   ngOnInit(){
-    //console.log('ngOnit hook is called')
+    console.log('ngOnit hook is called')
     //console.log(this.tempEl.nativeElement.innerHTML);
   }
 
   ngDoCheck(){
-    //console.log('ngDoCheck is called')
+    console.log('ngDoCheck is called')
     //console.log('In doCheck ', this.paraContent)
   }
 
 
 
   ngAfterContentInit(){
-    //console.log('ngAfterContentInit is called')
+    console.log('ngAfterContentInit is called')
     //console.log('In ngAfterContentInit ', this.paraContent)
 
   }
 
   ngAfterContentChecked(){
-    //console.log('ngAfterContentChecked is called')
+    console.log('ngAfterContentChecked is called')
     //console.log('In ngAfterContentChecked ',this.paraTemplate)
   }
 
@@ -65,5 +65,9 @@ export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,
   ngAfterViewChecked(){
     console.log('ngAfterViewChecked hook called')
    // console.log(this.paraTemplate.nativeElement.textContent);
+  }
+
+  ngOnDestroy(){
+    console.log('ngOnDestroy hook called');
   }
 }

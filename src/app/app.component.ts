@@ -18,6 +18,7 @@ import {
 export class AppComponent implements AfterViewInit,AfterViewChecked{
   title = 'Angular Life Cycle';
   inputVal:string='';
+  toDestroy: boolean = false;
 
   constructor() {
     console.log('App component constructor called')
@@ -34,5 +35,9 @@ export class AppComponent implements AfterViewInit,AfterViewChecked{
   onBtnClick(inputEL: HTMLInputElement) {
     this.inputVal=inputEL.value;
 
+  }
+
+  DestroyComponent() {
+    this.toDestroy = !this.toDestroy;
   }
 }
