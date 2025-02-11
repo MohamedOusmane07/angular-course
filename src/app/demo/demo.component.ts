@@ -1,7 +1,6 @@
 import {
   AfterContentChecked,
-  AfterContentInit,
-  ChangeDetectionStrategy,
+  AfterContentInit, AfterViewInit,
   Component, ContentChild,
   DoCheck,
   ElementRef,
@@ -17,11 +16,11 @@ import {
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.css',
 })
-export class DemoComponent implements OnChanges,OnInit,AfterContentInit,AfterContentChecked{
+export class DemoComponent implements OnChanges,OnInit,AfterContentInit,AfterContentChecked, AfterViewInit{
 
   title : string ='Demo component'
   @Input() message : string;
-  @ViewChild('temp') tempEl : ElementRef;
+  @ViewChild('temp') paraTemplate : ElementRef;
   @ContentChild('temp')paraContent : ElementRef;
 
   constructor() {
@@ -54,6 +53,12 @@ export class DemoComponent implements OnChanges,OnInit,AfterContentInit,AfterCon
 
   ngAfterContentChecked(){
     console.log('ngAfterContentChecked is called')
-    //console.log('In AfterContentChecked', this.paraContent)
+    //console.log('In ngAfterContentChecked ',this.paraTemplate)
+  }
+
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit is called')
+    //console.log('In ngAfterViewInit ', this.paraTemplate)
+
   }
 }
