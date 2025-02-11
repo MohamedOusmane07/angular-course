@@ -1,11 +1,21 @@
-import {AfterViewInit, Component, ElementRef, QueryList, viewChild, ViewChildren,} from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  DoCheck,
+  ElementRef,
+  OnInit,
+  QueryList,
+  viewChild,
+  ViewChildren,
+} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent implements AfterViewInit,AfterViewChecked{
   title = 'Angular Life Cycle';
   inputVal:string='';
 
@@ -14,7 +24,11 @@ export class AppComponent implements AfterViewInit{
   }
 
   ngAfterViewInit(){
-    console.log('ngAfterViewInit of app Component is called')
+   console.log('ngAfterViewInit of app Component is called')
+  }
+
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked of app Component is called')
   }
 
   onBtnClick(inputEL: HTMLInputElement) {
