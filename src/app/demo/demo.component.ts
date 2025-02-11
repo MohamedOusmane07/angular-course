@@ -25,7 +25,7 @@ export class DemoComponent implements OnChanges,OnInit,DoCheck,AfterContentInit,
 
   constructor() {
     console.log('Demo component constructor called')
-    //console.log(this.message)
+    console.log(this.message)
   }
 
   ngOnChanges(changes:SimpleChanges){
